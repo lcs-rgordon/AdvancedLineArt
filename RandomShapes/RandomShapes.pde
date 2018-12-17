@@ -4,15 +4,28 @@ void setup() {
   size(500, 500);
   // background white
   background(255);
+  // no fill
+  noFill();
 }
 
 // runs repeatedly
 void draw() {
-  // random position
-  float x = random(0, 500);
-  float y = random(0, 500);
-  // random size
-  float size = random(0, 50);
-  // draw ellipse
-  ellipse(x, y, size, size);
+  
+  drawFlower(2.0);
+
+}
+
+// draws a flower shape
+//
+// In Swift..
+// func drawFlower() {
+void drawFlower(float scale) {
+  ellipse(mouseX, mouseY, 50 * scale, 10 * scale);
+  ellipse(mouseX, mouseY, 10 * scale, 50 * scale);
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("output-####.png");
+  } 
 }
