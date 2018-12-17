@@ -17,3 +17,10 @@ void draw() {
   // draw circle
   ellipse(x, y, diameter, diameter);
 }
+
+void keyPressed() {
+  // stop the program and exit
+  if (key == 's') {
+    exit();
+  }
+}
